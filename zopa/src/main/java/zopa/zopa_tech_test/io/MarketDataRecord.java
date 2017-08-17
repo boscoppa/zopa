@@ -4,32 +4,27 @@ public class MarketDataRecord {
 
 	private String lender;
 	private float rate;
-	private int available;
-	
-	
+	private long available;
+
+	public MarketDataRecord(String lender, float rate, long available) {
+		this.lender = lender;
+		this.rate = rate;
+		this.available = available;
+	}
+
 	public String getLender() {
 		return lender;
 	}
-	
-	public void setLender(String lender) {
-		this.lender = lender;
-	}
-	
+
 	public float getRate() {
 		return rate;
 	}
-	
-	public void setRate(float rate) {
-		this.rate = rate;
-	}
-	
-	public int getAvailable() {
+
+	public long getAvailable() {
 		return available;
 	}
-	
-	public void setAvailable(int available) {
-		this.available = available;
+
+	public void borrow(float amount) {
+		available -= amount;
 	}
-	
-	
 }
