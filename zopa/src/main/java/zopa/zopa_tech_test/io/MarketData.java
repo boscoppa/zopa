@@ -24,7 +24,8 @@ public class MarketData {
 	public MarketDataRecord getLowestRateLender(long loanAmount) {
 		MarketDataRecord lowestRateLender = lenders.get(0);
 		for (MarketDataRecord lender : lenders) {
-			if (lender.getRate() < lowestRateLender.getRate()) {
+			if (lender.getRate() < lowestRateLender.getRate()
+					&& lender.getAvailable() > 0) {
 				lowestRateLender = lender;
 			}
 		}
