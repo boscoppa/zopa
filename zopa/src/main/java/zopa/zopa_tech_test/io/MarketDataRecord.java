@@ -1,5 +1,9 @@
 package zopa.zopa_tech_test.io;
 
+/**
+ * Details of an individual lender.
+ *
+ */
 public class MarketDataRecord {
 
 	private String lender;

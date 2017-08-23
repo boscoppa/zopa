@@ -2,6 +2,10 @@ package zopa.zopa_tech_test.io;
 
 import java.util.ArrayList;
 
+/**
+ * Stores all the details of the lenders in the market.
+ *
+ */
 public class MarketData {
 
 	private ArrayList<MarketDataRecord> lenders;
@@ -9,6 +13,7 @@ public class MarketData {
 	private long totalAvailable;
 
 	public MarketData() {
+		lenders = new ArrayList<MarketDataRecord>();
 		totalAvailable = 0;
 	}
 
@@ -24,8 +29,7 @@ public class MarketData {
 	public MarketDataRecord getLowestRateLender(long loanAmount) {
 		MarketDataRecord lowestRateLender = lenders.get(0);
 		for (MarketDataRecord lender : lenders) {
-			if (lender.getRate() < lowestRateLender.getRate()
-					&& lender.getAvailable() > 0) {
+			if (lender.getRate() < lowestRateLender.getRate() && lender.getAvailable() > 0) {
 				lowestRateLender = lender;
 			}
 		}
